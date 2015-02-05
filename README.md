@@ -1,4 +1,4 @@
-![maml_bw.png](https://bitbucket.org/repo/ar49p8/images/412420927-maml_bw.png)
+![maml_bw.png](/maml_bw.png)
 
 # README #
 
