@@ -8,7 +8,7 @@ This repository is a collection of tools which aim to improve the interface betw
 
 ### How do I get set up? ###
 
-Setup is easy - above standard packages (numpy, scipy), we do not have any dependencies 
+Setup is easy - above standard packages (numpy, scipy), we only have the dependency of Theano, which installs with pip 
 
 
 However, if you want to use the functional (multi-process) neural network code, you need to have python 2.7.8 or higher.  We recommend doing this by installing anaconda
