@@ -1,4 +1,4 @@
-__author__ = 'epyzerknapp'
+__author__ = 'epyzerknapp', 'miguel'
 import numpy as np
 import theano
 import theano.tensor as T
