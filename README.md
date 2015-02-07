@@ -24,6 +24,11 @@ To contribute to this code, you should be prepared to be asked to provide some o
 * Code review
 * Documentation
 
+### Repository Tranisition ###
+
+This repository is in transition from Bitbucket, and we are taking the opportunity to clean things up.  New features are coming thick and fast!
+
+
 ### Who do I talk to? ###
 
 This repo is controlled by Ed Pyzer-Knapp, please email at epyzerknapp[at]fas.harvard.edu
