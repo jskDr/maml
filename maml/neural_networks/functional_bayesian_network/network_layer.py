@@ -26,6 +26,7 @@ def network_layer(m_w_init, v_w_init, non_linear=True):
     # We store the type of activation function
 
     params['non_linear'] = non_linear
+    return params
 
 
 def _n_pdf(x):
