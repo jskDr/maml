@@ -6,7 +6,7 @@ import pbp
 class PBP_net:
 
     def __init__(self, X_train, y_train, n_hidden, n_epochs = 40,
-        normalize = False):
+        normalize = False, val_slice=0.05, tolerance=0.01, convergence=1e-06):
 
         """
             Constructor for the class implementing a Bayesian neural network
@@ -55,7 +55,8 @@ class PBP_net:
 
         # We iterate the learning process
 
-        self.pbp_instance.do_pbp(X_train, y_train_normalized, n_epochs)
+        self.pbp_instance.do_pbp(X_train, y_train_normalized, n_epochs,val_slice=val_slice,
+                                 tolerance=tolerance, convergence=convergence)
 
         # We are done!
 
