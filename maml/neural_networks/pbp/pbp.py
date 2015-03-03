@@ -6,7 +6,7 @@ import theano
 import theano.tensor as T
 import network
 import prior
-
+from copy import deepcopy
 
 class PBP:
 
@@ -19,11 +19,12 @@ class PBP:
         # We initialize the prior
 
         self.prior = prior.Prior(layer_sizes, var_targets)
-
+	self.initial_prior = deepcopy(self.prior)
         # We create the network
 
         params = self.prior.get_initial_params()
-        self.network = network.Network(params[ 'm_w' ], params[ 'v_w' ],
+        self.initial_params = deepcopy(params)
+	self.network = network.Network(params[ 'm_w' ], params[ 'v_w' ],
             params[ 'a' ], params[ 'b' ])
 
         # We create the input and output variables in theano
@@ -46,6 +47,14 @@ class PBP:
 
         self.predict = theano.function([ self.x ],
             self.network.predict(self.x))
+
+    def reset_pbp(self):
+	    """
+            Set the prior and parameters are reset to the intitialized values 
+	    """
+	    self.prior = deepcopy(self.initial_prior)
+	    self.network.set_params(self.initial_params)
+
 
     def do_pbp(self, X_train, y_train, n_iterations, val_slice=0.05, tolerance=0.01, convergence=1e-06, stoch_select=False, 
 		    normalize_targets=False, min_epochs=10, print_level=0):
